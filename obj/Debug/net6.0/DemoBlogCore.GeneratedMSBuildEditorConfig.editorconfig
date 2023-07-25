@@ -9,9 +9,13 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DemoBlogCore
 build_property.RootNamespace = DemoBlogCore
-build_property.ProjectDir = C:\Users\10724629\Desktop\Assessment\AngularDemo\DemoBlogCore\
+build_property.ProjectDir = K:\LTI Assessment Project\DemoBlogCore\DemoBlog\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\10724629\Desktop\Assessment\AngularDemo\DemoBlogCore
+build_property.MSBuildProjectDirectory = K:\LTI Assessment Project\DemoBlogCore\DemoBlog
 build_property._RazorSourceGeneratorDebug = 
+
+[K:/LTI Assessment Project/DemoBlogCore/DemoBlog/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

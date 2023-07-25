@@ -8,6 +8,8 @@ using System.Text;
 
 namespace DemoBlogCore.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class AuthenticateController : Controller
     {
 
@@ -38,7 +40,7 @@ namespace DemoBlogCore.Controllers
                 var authClaims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),                    
                 };
 
                 foreach (var userRole in userRoles)
@@ -67,8 +69,7 @@ namespace DemoBlogCore.Controllers
 
             IdentityUser user = new()
             {
-                Email = model.Email,
-                SecurityStamp = Guid.NewGuid().ToString(),
+                Email = model.Email,                
                 UserName = model.Username
             };
             var result = await _userManager.CreateAsync(user, model.Password);
@@ -120,7 +121,7 @@ namespace DemoBlogCore.Controllers
                 issuer: _configuration["JWT:ValidIssuer"],
                 audience: _configuration["JWT:ValidAudience"],
                 expires: DateTime.Now.AddHours(3),
-                claims: authClaims,
+                claims: authClaims,                
                 signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                 );
 
