@@ -9,7 +9,8 @@ using Microsoft.Extensions.Hosting;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace DemoBlogCore.Controllers
-{    
+{
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PostController : Controller
