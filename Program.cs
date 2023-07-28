@@ -11,7 +11,16 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddControllersWithViews();
 //For Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
-
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(
+        policy =>
+        {
+            policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 //For identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -25,7 +34,6 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
     options.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
 })
-
     .AddJwtBearer(options =>
     {
         options.SaveToken=true;
@@ -57,7 +65,7 @@ if (app.Environment.IsDevelopment())
 {
 
 }
-
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 app.UseStaticFiles();
