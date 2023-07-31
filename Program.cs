@@ -2,18 +2,31 @@ using DemoBlogCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
 builder.Services.AddControllersWithViews();
+//builder.Services.AddControllersWithViews()
+//    .AddNewtonsoft(options =>
+//    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+//);
+builder.Services.AddEndpointsApiExplorer();
+
+
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles
+);
 //For Entity Framework
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("ConnStr")));
 builder.Services.AddCors(options =>
 {
-    options.AddDefaultPolicy(
+    options.AddDefaultPolicy(   
         policy =>
         {
             policy.AllowAnyOrigin()
@@ -23,16 +36,18 @@ builder.Services.AddCors(options =>
 });
 //For identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+               // .AddDefaultTokenProviders();
 
 
 //Adding Athentication
 builder.Services.AddAuthentication(options =>
 {
-    options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
+    //options.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    //options.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
+    //options.DefaultScheme=JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
     .AddJwtBearer(options =>
     {

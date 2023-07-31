@@ -7,8 +7,8 @@ namespace DemoBlogCore.Models
     {
         [Key]
         public int Id { get; set; }
-        public string CommentText { get; set; }
-        public DateTime Date { get; set; }
+        public string? CommentText { get; set; }
+        public DateTime? Date { get; set; }
 
         [ForeignKey("post")]
         public int PostRefID { get; set; }

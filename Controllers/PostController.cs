@@ -10,9 +10,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace DemoBlogCore.Controllers
 {
-    [Authorize]
+    
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController,Authorize]
     public class PostController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
@@ -31,7 +31,7 @@ namespace DemoBlogCore.Controllers
                 return BadRequest();
             
             string imagePath = string.Empty;
-            IFormFile file = formData.Image;
+            IFormFile file = formData.Image!;
             // getting file original name
             if (file.FileName != null)
             {
@@ -81,12 +81,35 @@ namespace DemoBlogCore.Controllers
         [HttpGet]
         [Route("viewpost")]
         public IActionResult ViewPost()
-        {
-            //var post = _dbContext.Posts.Include(p => p.Comments).Include(p => p.Likes).FirstOrDefault(p => p.Id == id);
-            List<Post> post = _dbContext.Posts.ToList();
+            {
+            var post = _dbContext.Posts.Include(p => p.comments).ToList();
+           // List<Post> post = _dbContext.Posts.ToList();
             if (post == null)
                 return NotFound();
             return Ok(post);
         }
+
+        [HttpPost]
+        [Route("savecomment")]
+        public IActionResult SaveComment([FromForm] ViewModelComment data)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+            
+            _dbContext.SaveChanges();
+            var commentdata = new Comment
+            {
+                PostRefID = (int)data.PostRefID!,
+                CommentText = data.CommentText,
+                Date = DateTime.Now,
+            };
+
+            _dbContext.Comments.Add(commentdata);
+            _dbContext.SaveChanges();
+
+            return Ok(commentdata);
+        }
+
+       
     }
 }

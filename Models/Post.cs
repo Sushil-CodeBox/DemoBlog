@@ -12,7 +12,7 @@ namespace DemoBlogCore.Models
         public string? Title { get; set; }
         public string? Description { get; set; }
         public DateTime? Date { get; set; }
-        public string Image { get; set; }       
+        public string? Image { get; set; }       
         public string? UserRefId { get; set; }
         public int? CommentCount { get; set; }
         public int? LikeCount { get; set; }
