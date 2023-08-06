@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlogCore", "DemoBlogCore.csproj", "{96179097-901A-44BD-AFDD-539CC8256F2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoBlogCore", "DemoBlogCore.csproj", "{96179097-901A-44BD-AFDD-539CC8256F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoBlogCore.Tests", "..\DemoBlogCore.Tests\DemoBlogCore.Tests.csproj", "{B540BC21-40D7-46AE-9F2F-38CC2BC53ED7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{96179097-901A-44BD-AFDD-539CC8256F2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96179097-901A-44BD-AFDD-539CC8256F2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96179097-901A-44BD-AFDD-539CC8256F2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B540BC21-40D7-46AE-9F2F-38CC2BC53ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B540BC21-40D7-46AE-9F2F-38CC2BC53ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B540BC21-40D7-46AE-9F2F-38CC2BC53ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B540BC21-40D7-46AE-9F2F-38CC2BC53ED7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
