@@ -80,9 +80,9 @@ namespace DemoBlogCore.Controllers
 
         [HttpGet]
         [Route("viewpost")]
-        public async Task<IActionResult> ViewPost()
+        public IActionResult ViewPost()
             {
-            var post = await _dbContext.Posts.Include(p => p.comments).OrderByDescending(p=>p.Date).ToListAsync();
+            var post = _dbContext.Posts.Include(p => p.comments).ToList();
            // List<Post> post = _dbContext.Posts.ToList();
             if (post == null)
                 return NotFound();
@@ -96,14 +96,12 @@ namespace DemoBlogCore.Controllers
             if (!ModelState.IsValid)
                 return BadRequest();
             
-            
+            _dbContext.SaveChanges();
             var commentdata = new Comment
             {
                 PostRefID = (int)data.PostRefID!,
                 CommentText = data.CommentText,
                 Date = DateTime.Now,
-                Username=data.UserName,
-                UserId=data.UserID,
             };
 
             _dbContext.Comments.Add(commentdata);

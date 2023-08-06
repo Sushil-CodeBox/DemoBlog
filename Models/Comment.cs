@@ -9,8 +9,6 @@ namespace DemoBlogCore.Models
         public int Id { get; set; }
         public string? CommentText { get; set; }
         public DateTime? Date { get; set; }
-        public string? Username { get; set; }
-        public string? UserId { get; set; }
 
         [ForeignKey("post")]
         public int PostRefID { get; set; }

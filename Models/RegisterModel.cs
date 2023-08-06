@@ -14,8 +14,6 @@ namespace DemoBlogCore.Models
 
             [Required(ErrorMessage = "Password is required")]
             public string? Password { get; set; }
-
-             public string? confirmPassword { get; set; }
-
+        
     }
 }
