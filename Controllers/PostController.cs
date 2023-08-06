@@ -82,7 +82,7 @@ namespace DemoBlogCore.Controllers
         [Route("viewpost")]
         public IActionResult ViewPost()
             {
-            var post = _dbContext.Posts.Include(p => p.comments).ToList();
+            var post = _dbContext.Posts.Include(p => p.comments).OrderByDescending(p=>p.Date).ToList();
            // List<Post> post = _dbContext.Posts.ToList();
             if (post == null)
                 return NotFound();
@@ -101,6 +101,8 @@ namespace DemoBlogCore.Controllers
             {
                 PostRefID = (int)data.PostRefID!,
                 CommentText = data.CommentText,
+                UserId=data.UserID,
+                Username=data.UserName,
                 Date = DateTime.Now,
             };
 

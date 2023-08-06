@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "/yIpgDBVY5xSZ+Qe4TgxB/MpqvpibiJvE6gK6Q2UCoU=",
+  "Hash": "zFSlNBMyOqGFQjVbxvyL2RmiTAzpKoix40fSZHVSQ7c=",
   "Source": "DemoBlogCore",
   "BasePath": "_content/DemoBlogCore",
   "Mode": "Default",
@@ -561,6 +561,23 @@
       "OriginalItemSpec": "wwwroot\\main.f47b0d225766efe0.js"
     },
     {
+      "Identity": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\main.fc61b46eaa249b92.js",
+      "SourceId": "DemoBlogCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\",
+      "BasePath": "_content/DemoBlogCore",
+      "RelativePath": "main.fc61b46eaa249b92.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\main.fc61b46eaa249b92.js"
+    },
+    {
       "Identity": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\polyfills.3c057ed5e77b10f3.js",
       "SourceId": "DemoBlogCore",
       "SourceType": "Discovered",
@@ -610,6 +627,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\scripts.eebee5cf4d4173bc.js"
+    },
+    {
+      "Identity": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\styles.1a2e9bdb061f2d62.css",
+      "SourceId": "DemoBlogCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\",
+      "BasePath": "_content/DemoBlogCore",
+      "RelativePath": "styles.1a2e9bdb061f2d62.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\styles.1a2e9bdb061f2d62.css"
     },
     {
       "Identity": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\styles.6b9ed0769162183d.css",

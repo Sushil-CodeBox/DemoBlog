@@ -185,6 +185,10 @@
       "PackagePath": "staticwebassets\\main.f47b0d225766efe0.js"
     },
     {
+      "Id": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\main.fc61b46eaa249b92.js",
+      "PackagePath": "staticwebassets\\main.fc61b46eaa249b92.js"
+    },
+    {
       "Id": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\polyfills.3c057ed5e77b10f3.js",
       "PackagePath": "staticwebassets\\polyfills.3c057ed5e77b10f3.js"
     },
@@ -195,6 +199,10 @@
     {
       "Id": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\scripts.eebee5cf4d4173bc.js",
       "PackagePath": "staticwebassets\\scripts.eebee5cf4d4173bc.js"
+    },
+    {
+      "Id": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\styles.1a2e9bdb061f2d62.css",
+      "PackagePath": "staticwebassets\\styles.1a2e9bdb061f2d62.css"
     },
     {
       "Id": "K:\\LTI Assessment Project\\DemoBlogCore\\DemoBlog\\wwwroot\\styles.6b9ed0769162183d.css",
