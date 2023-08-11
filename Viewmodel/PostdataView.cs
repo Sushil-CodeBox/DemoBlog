@@ -6,6 +6,6 @@
         public string? Description { get; set; }
         public IFormFile? Image { get; set; }
 
-        public string? UserId { get; set; }
+        public string? logedInUserID { get; set; }
     }
 }

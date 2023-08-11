@@ -12,7 +12,7 @@ namespace DemoBlogCore.Controllers
 {
     
     [Route("api/[controller]")]
-    [ApiController,Authorize]
+    [ApiController, Authorize]
     public class PostController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
@@ -68,7 +68,7 @@ namespace DemoBlogCore.Controllers
                 CommentCount = 0,
                 LikeCount = 0,
                 Date = DateTime.Now,
-                UserRefId = formData.UserId,
+                UserRefId = formData.logedInUserID,
                 Image =FilepathDb,
             };
 
@@ -84,6 +84,17 @@ namespace DemoBlogCore.Controllers
             {
             var post = _dbContext.Posts.Include(p => p.comments).OrderByDescending(p=>p.Date).ToList();
            // List<Post> post = _dbContext.Posts.ToList();
+            if (post == null)
+                return NotFound();
+            return Ok(post);
+        }
+
+        [HttpGet]
+        [Route("mypost/{currentuserid}")]
+        public IActionResult MyPostView([FromRoute] string currentuserid)
+        {
+            var post = _dbContext.Posts.Where(p => p.UserRefId == currentuserid).Include(p => p.comments).OrderByDescending(p => p.Date).ToList();
+            // List<Post> post = _dbContext.Posts.ToList();
             if (post == null)
                 return NotFound();
             return Ok(post);
